@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mern-todo-list/static/css/main.1635e87c.chunk.css",
+    "main.js": "/mern-todo-list/static/js/main.02206f35.chunk.js",
+    "main.js.map": "/mern-todo-list/static/js/main.02206f35.chunk.js.map",
+    "runtime-main.js": "/mern-todo-list/static/js/runtime-main.08bc1ec7.js",
+    "runtime-main.js.map": "/mern-todo-list/static/js/runtime-main.08bc1ec7.js.map",
+    "static/js/2.5b27a466.chunk.js": "/mern-todo-list/static/js/2.5b27a466.chunk.js",
+    "static/js/2.5b27a466.chunk.js.map": "/mern-todo-list/static/js/2.5b27a466.chunk.js.map",
+    "static/js/3.1b9be8e3.chunk.js": "/mern-todo-list/static/js/3.1b9be8e3.chunk.js",
+    "static/js/3.1b9be8e3.chunk.js.map": "/mern-todo-list/static/js/3.1b9be8e3.chunk.js.map",
+    "index.html": "/mern-todo-list/index.html",
+    "static/css/main.1635e87c.chunk.css.map": "/mern-todo-list/static/css/main.1635e87c.chunk.css.map",
+    "static/js/2.5b27a466.chunk.js.LICENSE.txt": "/mern-todo-list/static/js/2.5b27a466.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/mern-todo-list/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08bc1ec7.js",
+    "static/js/2.5b27a466.chunk.js",
+    "static/css/main.1635e87c.chunk.css",
+    "static/js/main.02206f35.chunk.js"
+  ]
+}
