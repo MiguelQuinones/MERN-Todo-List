@@ -14,15 +14,15 @@ class App extends Component {
     return (
       <Router>
         <div className = "container" >
-          <nav className = "navbar" >
+          <nav className = "navbar navbar-expand-lg navbar-light bg-light" >
           <img src = { logo } alt = "Logo" />
             <Link to = "/" className = "navbar-brand"> MERN Stack Todo List </Link>
             <div className = "navbar-collapse">
-              <ul className = "navbar-nav mr-auto">
-                <li className = "navbar-item">
-                  <Link to = "/" className = "nav-link"> Todo List </Link>
+              <ul className = "nav nav-tabs">
+                <li className = "nav-item">
+                  <Link to = "/" className = "nav-link" aria-current = "page"> Todo List </Link>
                 </li>
-                <li className = "navbar-item">
+                <li className = "nav-item">
                   <Link to = "/create" className = "nav-link"> Create Task</Link>
                 </li>
               </ul>
