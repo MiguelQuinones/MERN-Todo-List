@@ -8,7 +8,7 @@ export default class createTask extends Component {
     
     // Constructor will go here
     constructor( props ) {
-        super( props ); // deprecated, might want to remove
+        super( props ); 
 
         // bind statements go here
         this.handleChangeDescription = this.handleChangeDescription.bind( this );
