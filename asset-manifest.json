@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/mern-todo-list/static/css/main.1635e87c.chunk.css",
-    "main.js": "/mern-todo-list/static/js/main.02206f35.chunk.js",
-    "main.js.map": "/mern-todo-list/static/js/main.02206f35.chunk.js.map",
-    "runtime-main.js": "/mern-todo-list/static/js/runtime-main.08bc1ec7.js",
-    "runtime-main.js.map": "/mern-todo-list/static/js/runtime-main.08bc1ec7.js.map",
-    "static/js/2.5b27a466.chunk.js": "/mern-todo-list/static/js/2.5b27a466.chunk.js",
-    "static/js/2.5b27a466.chunk.js.map": "/mern-todo-list/static/js/2.5b27a466.chunk.js.map",
-    "static/js/3.1b9be8e3.chunk.js": "/mern-todo-list/static/js/3.1b9be8e3.chunk.js",
-    "static/js/3.1b9be8e3.chunk.js.map": "/mern-todo-list/static/js/3.1b9be8e3.chunk.js.map",
+    "main.css": "/mern-todo-list/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/mern-todo-list/static/js/main.303a4ef2.chunk.js",
+    "main.js.map": "/mern-todo-list/static/js/main.303a4ef2.chunk.js.map",
+    "runtime-main.js": "/mern-todo-list/static/js/runtime-main.a15f2e17.js",
+    "runtime-main.js.map": "/mern-todo-list/static/js/runtime-main.a15f2e17.js.map",
+    "static/css/2.fabbef47.chunk.css": "/mern-todo-list/static/css/2.fabbef47.chunk.css",
+    "static/js/2.a0e1f99a.chunk.js": "/mern-todo-list/static/js/2.a0e1f99a.chunk.js",
+    "static/js/2.a0e1f99a.chunk.js.map": "/mern-todo-list/static/js/2.a0e1f99a.chunk.js.map",
+    "static/js/3.4b03a5f7.chunk.js": "/mern-todo-list/static/js/3.4b03a5f7.chunk.js",
+    "static/js/3.4b03a5f7.chunk.js.map": "/mern-todo-list/static/js/3.4b03a5f7.chunk.js.map",
     "index.html": "/mern-todo-list/index.html",
-    "static/css/main.1635e87c.chunk.css.map": "/mern-todo-list/static/css/main.1635e87c.chunk.css.map",
-    "static/js/2.5b27a466.chunk.js.LICENSE.txt": "/mern-todo-list/static/js/2.5b27a466.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/mern-todo-list/static/media/logo.6ce24c58.svg"
+    "static/css/2.fabbef47.chunk.css.map": "/mern-todo-list/static/css/2.fabbef47.chunk.css.map",
+    "static/css/main.2ae47eeb.chunk.css.map": "/mern-todo-list/static/css/main.2ae47eeb.chunk.css.map",
+    "static/js/2.a0e1f99a.chunk.js.LICENSE.txt": "/mern-todo-list/static/js/2.a0e1f99a.chunk.js.LICENSE.txt",
+    "static/media/list-task.1953b76e.svg": "/mern-todo-list/static/media/list-task.1953b76e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.08bc1ec7.js",
-    "static/js/2.5b27a466.chunk.js",
-    "static/css/main.1635e87c.chunk.css",
-    "static/js/main.02206f35.chunk.js"
+    "static/js/runtime-main.a15f2e17.js",
+    "static/css/2.fabbef47.chunk.css",
+    "static/js/2.a0e1f99a.chunk.js",
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.303a4ef2.chunk.js"
   ]
 }
