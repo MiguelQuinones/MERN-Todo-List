@@ -16,7 +16,7 @@ class App extends Component {
         <div className = "container" >
           <nav className = "navbar navbar-expand-lg navbar-light bg-light" >
           <img src = { logo } alt = "Logo" />
-            <Link to = "/" className = "navbar-brand"> MERN Stack Todo List </Link>
+            <Link to = "/" className = "navbar-brand"> MERN Stack List </Link>
             <div className = "navbar-collapse">
               <ul className = "nav nav-tabs">
                 <li className = "nav-item">

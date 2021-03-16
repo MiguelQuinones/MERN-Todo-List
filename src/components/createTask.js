@@ -2,8 +2,6 @@
 
 // Necessary import statements
 import React, { Component } from "react";
-// use fetch instead of axios
-import axios from "axios";
 
 export default class createTask extends Component {
     
@@ -11,12 +9,12 @@ export default class createTask extends Component {
     constructor( props ) {
         super( props ); 
 
-        // bind statements go here
+        // Bind user inputs to functions
         this.handleChangeDescription = this.handleChangeDescription.bind( this );
         this.handleChangePriority = this.handleChangePriority.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
 
-        // State descriptions
+        // Default state descriptions
         this.state = {
             task_description : '',
             task_priority : '',
@@ -52,7 +50,6 @@ export default class createTask extends Component {
         };
 
         // Send request to database comprised of stringified object -- change endpoint later
-        // axios.post( 'http://localhost:4000/tododb/add', newTask ).then( res => console.log( res.data ) );
         fetch( 'http://localhost:4000/tododb/add', {
             method: 'POST',
             headers: {
