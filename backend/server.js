@@ -70,6 +70,7 @@ router.post( '/update/:id', ( req, res, next ) => {
 // Routing for add path -- when a user adds a new task to the list
 router.post( '/add', ( req, res, next ) => {
     let task = new Task( req.body );
+    // Can change below response later
     task.save().then( task => {
         res.status( 200 ).json( {'Task': 'Task added successfully'} );
     }).catch( error => {
