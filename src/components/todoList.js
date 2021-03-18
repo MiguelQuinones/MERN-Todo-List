@@ -4,14 +4,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// Create object that will act as table of tasks
+// Create object that will act as table of tasks -- add deletion functionality
 const Task = props => (
     <tr>
-        <td> { props.task.task_description } </td>
-        <td> { props.task.task_priority } </td>
+        <td className = "taskDescription"> { props.task.task_description }</td>
+        <td className = "taskPriority"> { props.task.task_priority } </td>
+        <td className = { props.task.task_completed ? "completed" : "" }> </td>
         <td> 
-            <Link to = { "/edit/" + props.task._id } > Edit Task </Link>
+            <Link to = { "/edit/" + props.task._id }> Edit Task </Link>
+        </td>
+        <td>
+            <Link to ={ "/delete/" + props.task_id }> Delete Task </Link>
         </td>
     </tr>
 )
@@ -62,7 +67,9 @@ export default class todoList extends Component {
                         <tr>
                             <th> Description </th>
                             <th> Priority </th>
+                            <th> Completed </th>
                             <th> Edit </th>
+                            <th> Delete </th>
                         </tr>
                     </thead>
                     <tbody>

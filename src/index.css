@@ -13,5 +13,8 @@ code {
 }
 
 .completed {
-  text-decoration: line-through;
+  background-image: url(./check2-circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
 }
