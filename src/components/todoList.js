@@ -18,9 +18,10 @@ const Task = props => (
 
 export default class todoList extends Component {
     
-    // Constructor will go here
     constructor( props ) {
         super( props );
+
+        // Default state consists of empty array, tasks retrieved from DB will be placed here
         this.state = { tasks: [] }
     }
 
@@ -30,10 +31,10 @@ export default class todoList extends Component {
         axios.get( "http://localhost:4000/tododb/" )
         .then( response => {
             this.setState( { tasks: response.data } );
-        })
+        } )
         .catch( ( error ) => {
             console.log( error );
-        })
+        } )
         // fetch( 'http://localhost:4000/tododb/' )
         // .then( response => response.json() )
         // .then( response =>  {
@@ -51,17 +52,17 @@ export default class todoList extends Component {
         })
     }
 
-    // Render function to display table of tasks to user -- check bootstrap styling for tables later
+    // Render function to display table of tasks to user -- if task is completed, add checkmark next to task in new header
     render() {
         return (
             <div>
                 <h1> Task List </h1>
-                <table className = "table table-striped">
+                <table className = "table table-striped table-bordered table-hover table-dark">
                     <thead>
                         <tr>
                             <th> Description </th>
                             <th> Priority </th>
-                            <th> Action </th>
+                            <th> Edit </th>
                         </tr>
                     </thead>
                     <tbody>

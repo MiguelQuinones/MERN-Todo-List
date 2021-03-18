@@ -23,24 +23,20 @@ export default class createTask extends Component {
     }
 
     handleChangeDescription( e ) {
-        this.setState ({
+        this.setState ( {
             task_description : e.target.value
-        });
+        } );
     }
 
     handleChangePriority( e ) {
-        this.setState ({
+        this.setState ( {
             task_priority : e.target.value
-        });
+        } );
     }
 
     handleSubmit( e ) {
         // Prevent page from refreshing after submission
         e.preventDefault();
-
-        // Console log statements -- remove later 
-        console.log( `Task description: ${ this.state.task_description }` );
-        console.log( `Task priority: ${ this.state.task_priority}` );
 
         // Create object to hold user input
         const newTask = {
@@ -49,7 +45,7 @@ export default class createTask extends Component {
             task_completed: this.state.task_completed
         };
 
-        // Send request to database comprised of stringified object -- change endpoint later
+        // Send request to database comprised of stringified object -- change endpoint later -- alert user of success
         fetch( 'http://localhost:4000/tododb/add', {
             method: 'POST',
             headers: {
@@ -83,6 +79,9 @@ export default class createTask extends Component {
                                value = { this.state.task_description }
                                onChange = { this.handleChangeDescription }
                                />
+                    </div>
+                    <div>
+                        <label> Set Task Priority: </label>
                     </div>
                     <div className = "form-group">
                         <div className = "custom-control custom-switch">
