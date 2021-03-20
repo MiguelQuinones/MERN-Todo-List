@@ -16,7 +16,7 @@ const Task = props => (
             <Link to = { "/edit/" + props.task._id }> Edit Task </Link>
         </td>
         <td>
-            <Link to ={ "/delete/" + props.task_id }> Delete Task </Link>
+            <Link to ={ "/delete/" + props.task._id }> Delete Task </Link>
         </td>
     </tr>
 )
@@ -40,14 +40,6 @@ export default class todoList extends Component {
         .catch( ( error ) => {
             console.log( error );
         } )
-        // fetch( 'http://localhost:4000/tododb/' )
-        // .then( response => response.json() )
-        // .then( response =>  {
-        //     this.setState( { tasks: response.data } )
-        // } )
-        // .catch( ( error ) => {
-        //     console.error( "Error:", error )
-        // });
     }
 
     // Function to map list of tasks

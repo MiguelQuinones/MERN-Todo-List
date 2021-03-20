@@ -1,14 +1,14 @@
-// Page for editing a task on the todo list
+// Page for deleting a task from the list
 
-// Necessary import statement
+// Necessary import statements
 import axios from "axios";
 import React, { Component } from "react";
 
-export default class editTask extends Component {
+export default class deleteTask extends Component {
     
     // Constructor will go here
     constructor( props ) {
-        super( props );
+        super( props ); 
 
         // Bind user inputs to functions
         this.handleChangeDescription = this.handleChangeDescription.bind( this );
@@ -16,7 +16,7 @@ export default class editTask extends Component {
         this.handleChangeCompleted = this.handleChangeCompleted.bind( this );
         this.handleSubmit = this.handleSubmit.bind( this );
 
-        // States of a task are empty by default
+        // Default state descriptions
         this.state = {
             task_description: "",
             task_priority: "",
@@ -24,7 +24,7 @@ export default class editTask extends Component {
         }
     }
 
-    // Fetch specific task to be edited from DB via its id, then set its states according to edits from user
+    // Fetch task to be deleted from DB via its id
     componentDidMount() {
         axios.get( "http://localhost:4000/tododb/" + this.props.match.params.id )
         .then( response => {
@@ -60,41 +60,41 @@ export default class editTask extends Component {
         } );
     }
 
-    // Handles submission -- sends edited task to DB to be displayed back to user
+    // Sends delete request to DB and removes it from the list
     handleSubmit( e ) {
+        // Prevent page from refreshing after submission
         e.preventDefault();
 
-        // Object to hold current states of edited task
-        const editedTask = {
-            task_description: this.state.task_description,
-            task_priority: this.state.task_priority,
-            task_completed: this.state.task_completed
-        }
-
-        // Send edited task back to DB to update the task
-        axios.post( "http://localhost:4000/tododb/update/" + this.props.match.params.id, editedTask)
-        .then( response => console.log( response.data ) );
+        // Send delete request to database comprised of url holding ID of task to be removed
+        const url = "http://localhost:4000/tododb/" + this.props.match.params.id;
+        axios.delete( url )
+        .then( response => {
+            console.log( "Response: ");
+            console.log( response );
+            console.log( response.data );
+            console.log( "End.");
+        })
 
         this.props.history.push( '/' );
     }
 
-    // Render page that displays edit form to user
+    // Render function that displays form to user -- remove submit input later for submit button component
     render() {
         return (
             <div>
-                <h1> Edit This Task </h1>
+                <h1> Delete This Task? </h1>
                 <form onSubmit = { this.handleSubmit } >
                     <div className = "form-group">
-                        <label className = "form-label"> New Task Description: </label>
+                        <label className = "form-label"> Task Description: </label>
                         <input type = "text"
                                className = "form-control"
-                               placeholder = "Enter the task you'd like to add here"
                                value = { this.state.task_description }
+                               readOnly
                                onChange = { this.handleChangeDescription }
                                />
                     </div>
                     <div>
-                        <label> Set Priority: </label>
+                        <label> Task Priority: </label>
                     </div>
                     <div className = "form-group">
                         <div className = "custom-control custom-switch">
@@ -103,6 +103,7 @@ export default class editTask extends Component {
                                    name = "priorityOptions"
                                    id = "customSwitch1"
                                    value = "Low"
+                                   readOnly
                                    checked = { this.state.task_priority === 'Low' }
                                    onChange = { this.handleChangePriority }
                                    />
@@ -114,6 +115,7 @@ export default class editTask extends Component {
                                    name = "priorityOptions"
                                    id = "customSwitch2"
                                    value = "Medium"
+                                   readOnly
                                    checked = { this.state.task_priority === 'Medium' }
                                    onChange = { this.handleChangePriority }
                                    />
@@ -125,6 +127,7 @@ export default class editTask extends Component {
                                    name = "priorityOptions"
                                    id = "customSwitch3"
                                    value = "High"
+                                   readOnly
                                    checked = { this.state.task_priority === 'High' }
                                    onChange = { this.handleChangePriority }
                                    />
@@ -135,6 +138,7 @@ export default class editTask extends Component {
                                    type = "checkbox"
                                    name = "completedCheckbox"
                                    id = "customSwitch4"
+                                   readOnly
                                    onChange = { this.handleChangeCompleted }
                                    checked = { this.state.task_completed }
                                    value = { this.state.task_completed }
@@ -143,11 +147,10 @@ export default class editTask extends Component {
                         </div>
                     </div>
                     <div className = "form-group">
-                        <input type = "submit" value = "Update Task" className = "btn btn-primary" />
+                        <input type = "submit" value = "Delete Task" className = "btn btn-primary" />
                     </div>
                 </form>
             </div>
         )
     }
-
 }

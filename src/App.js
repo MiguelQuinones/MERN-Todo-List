@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import createTask from "./components/createTask";
 import editTask from "./components/editTask";
+import deleteTask from "./components/deleteTask"
 import todoList from "./components/todoList";
 import logo from "./list-task.svg";
 
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path = "/" exact component = { todoList } />
           <Route path = "/edit/:id" component = { editTask } />
           <Route path = "/create" component = { createTask } />
+          <Route path = "/delete/:id" component = { deleteTask } />
         </div>
       </Router>
     );

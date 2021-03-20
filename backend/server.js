@@ -70,13 +70,28 @@ router.post( '/update/:id', ( req, res, next ) => {
 // Routing for add path -- when a user adds a new task to the list
 router.post( '/add', ( req, res, next ) => {
     let task = new Task( req.body );
-    // Can change below response later
     task.save().then( task => {
         res.status( 200 ).json( {'Task': 'Task added successfully'} );
     }).catch( error => {
         res.status( 400 ).send( "Task could not be added to list." );
     });
 });
+
+// Routing for delete path -- when a user deletes a task from the list
+// router.delete( '/remove/:id', ( req, res, next ) => {
+//     Task.findById( req.params.id, ( error, task ) => {
+//         if( !task ) {
+//             res.status( 400 ).send( "Task could not be found");
+//         } else {
+//             task.save().then( task => {
+//                 res.json( "Task successfully removed." );
+//             })
+//             .catch( error => {
+//                 res.status( 400 ).send( "Task could not be removed." );
+//             });
+//         }
+//     });
+// });
 
 // Mounting the router to the application
 app.use( '/tododb', router );
