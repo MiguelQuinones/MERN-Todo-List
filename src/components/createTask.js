@@ -63,6 +63,9 @@ export default class createTask extends Component {
             task_priority : '',
             task_completed : false
         })
+
+        // Return user to list after submission
+        this.props.history.push( '/' );
     }
 
     // Render function that displays form to user -- remove submit input later for submit button component
