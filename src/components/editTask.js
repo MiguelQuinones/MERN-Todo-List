@@ -75,6 +75,7 @@ export default class editTask extends Component {
         axios.post( "http://localhost:4000/tododb/update/" + this.props.match.params.id, editedTask)
         .then( response => console.log( response.data ) );
 
+        // Return user to list after task has been updated
         this.props.history.push( '/' );
     }
 

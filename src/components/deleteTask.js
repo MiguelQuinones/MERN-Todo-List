@@ -66,15 +66,14 @@ export default class deleteTask extends Component {
         e.preventDefault();
 
         // Send delete request to database comprised of url holding ID of task to be removed
-        const url = "http://localhost:4000/tododb/" + this.props.match.params.id;
-        axios.delete( url )
+        console.log( "Deleting now..." );
+        axios.post( "http://localhost:4000/tododb/remove/" + this.props.match.params.id )
         .then( response => {
-            console.log( "Response: ");
-            console.log( response );
-            console.log( response.data );
-            console.log( "End.");
+            console.log( "Sent to /remove. ");
         })
+        console.log( "Deleted!" );
 
+        // Return user to list after deletion
         this.props.history.push( '/' );
     }
 

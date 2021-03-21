@@ -8,16 +8,17 @@ const router = express.Router();
 const port = 4000;
 
 let Task = require('./todo.model');
+const { findByIdAndDelete } = require('./todo.model');
 
 // Implementing the cors and body-parser dependencies
 app.use( cors() );
 app.use( bodyParser.json() );
 
 // Establishing connection to the Mongoose DB
-mongoose.connect('mongodb://127.0.0.1:27017/tododb', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/tododb', { useNewUrlParser: true } );
 const connection = mongoose.connection;
 
-connection.once('open', function() {
+connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
@@ -78,20 +79,15 @@ router.post( '/add', ( req, res, next ) => {
 });
 
 // Routing for delete path -- when a user deletes a task from the list
-// router.delete( '/remove/:id', ( req, res, next ) => {
-//     Task.findById( req.params.id, ( error, task ) => {
-//         if( !task ) {
-//             res.status( 400 ).send( "Task could not be found");
-//         } else {
-//             task.save().then( task => {
-//                 res.json( "Task successfully removed." );
-//             })
-//             .catch( error => {
-//                 res.status( 400 ).send( "Task could not be removed." );
-//             });
-//         }
-//     });
-// });
+router.post( '/remove/:id', ( req, res, next ) => {
+    Task.findOneAndRemove( { _id: req.params.id }, ( error ) => {
+        if( error ) {
+            console.log( "Error when removing task..." );
+        } else {
+            console.log( "Task successfully removed!" );
+        }
+    })
+});
 
 // Mounting the router to the application
 app.use( '/tododb', router );
