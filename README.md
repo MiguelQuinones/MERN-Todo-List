@@ -8,8 +8,6 @@ This application's front end is currently being hosted on GitHub Pages: https://
 
 # TODO
 
-Add functionality to remove tasks from list
-
 Change background of pages to be dark-themed
 
 More...
