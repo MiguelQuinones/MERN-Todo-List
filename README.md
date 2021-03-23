@@ -8,6 +8,6 @@ This application's front end is currently being hosted on GitHub Pages: https://
 
 # TODO
 
-Change background of pages to be dark-themed
+Add button to switch between dark theme and light theme
 
 More...

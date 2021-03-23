@@ -17,15 +17,21 @@ class App extends Component {
         <div className = "container" >
           <nav className = "navbar navbar-expand-lg navbar-light bg-light" >
           <img src = { logo } alt = "Logo" />
-            <Link to = "/" className = "navbar-brand"> MERN Stack List </Link>
+            <Link to = "/" className = "navbar-brand"> </Link>
             <div className = "navbar-collapse">
               <ul className = "nav nav-tabs">
                 <li className = "nav-item">
-                  <Link to = "/" className = "nav-link" aria-current = "page"> Todo List </Link>
+                  <Link to = "/" className = "nav-link" aria-current = "page"> Task List </Link>
                 </li>
                 <li className = "nav-item">
                   <Link to = "/create" className = "nav-link"> Create Task</Link>
                 </li>
+                <div className = "nav pull-right">
+                  <button type = "button" className = "btn btn-primary navbar-btn">
+                    <span className = "glyphicon glyphicon-plus"></span>
+                    Dark/Light Mode
+                  </button>
+                </div>
               </ul>
             </div>
           </nav>
