@@ -10,7 +10,36 @@ import deleteTask from "./components/deleteTask"
 import todoList from "./components/todoList";
 import logo from "./list-task.svg";
 
+// Enums for light/dark theme
+const LIGHT_THEME_HEX = "#E2E8F0";
+const DARK_THEME_HEX = "#1A202C";
+const THEMES = {
+  Light: LIGHT_THEME_HEX,
+  Dark: DARK_THEME_HEX
+};
+
+const THEME_KEY = "THEME";
+
 class App extends Component {
+
+  // Saves chosen theme to web storage to persist across pages
+  saveSettings( value ) {
+    window.localStorage.setItem( THEME_KEY, value );
+  }
+
+  // Retrieve saved theme from web storage -- if no theme has been saved yet, default to light theme
+  getSettings() {
+    return window.localStorage.getItem( THEME_KEY ) ?? THEMES.Light;
+  }
+
+  // Changes theme depending on which one user wants to use
+  themeSwitch( theme ) {
+    document.body.style.backgroundColor = theme;
+    document.body.style.color = theme === THEMES.Dark ? THEMES.Light : THEMES.Dark;
+    this.saveSettings( theme );
+    // Change H1 text color depending on theme
+  }
+
   render() {
     return (
       <Router>
@@ -27,10 +56,10 @@ class App extends Component {
                   <Link to = "/create" className = "nav-link"> Create Task</Link>
                 </li>
                 <div className = "nav pull-right">
-                  <button type = "button" className = "btn btn-primary navbar-btn">
-                    <span className = "glyphicon glyphicon-plus"></span>
-                    Dark/Light Mode
-                  </button>
+                  <div className = "button-holde">
+                    <div className = "theme-dark" onClick = { () => this.themeSwitch( THEMES.Dark ) } > </div>
+                    <div className = "theme-light" onClick = { () => this.themeSwitch( THEMES.Light ) } > </div>
+                  </div>
                 </div>
               </ul>
             </div>
