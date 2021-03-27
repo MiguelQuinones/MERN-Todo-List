@@ -8,6 +8,6 @@ This application's front end is currently being hosted on GitHub Pages: https://
 
 # TODO
 
-Add button to switch between dark theme and light theme
+Add way to have table switch between light and dark themes
 
 More...
