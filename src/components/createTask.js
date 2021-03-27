@@ -72,7 +72,7 @@ export default class createTask extends Component {
     render() {
         return (
             <div>
-                <h1> Create a New Task </h1>
+                <h1 id = "header1"> Create a New Task </h1>
                 <form onSubmit = { this.handleSubmit } >
                     <div className = "form-group">
                         <label className = "form-label"> Task Description: </label>

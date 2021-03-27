@@ -37,7 +37,6 @@ class App extends Component {
     document.body.style.backgroundColor = theme;
     document.body.style.color = theme === THEMES.Dark ? THEMES.Light : THEMES.Dark;
     this.saveSettings( theme );
-    // Change H1 text color depending on theme
   }
 
   render() {
@@ -55,8 +54,8 @@ class App extends Component {
                 <li className = "nav-item">
                   <Link to = "/create" className = "nav-link"> Create Task</Link>
                 </li>
-                <div className = "nav pull-right">
-                  <div className = "button-holde">
+                <div className = "nav-item ml-auto">
+                  <div className = "button-holder">
                     <div className = "theme-dark" onClick = { () => this.themeSwitch( THEMES.Dark ) } > </div>
                     <div className = "theme-light" onClick = { () => this.themeSwitch( THEMES.Light ) } > </div>
                   </div>

@@ -83,7 +83,7 @@ export default class editTask extends Component {
     render() {
         return (
             <div>
-                <h1> Edit This Task </h1>
+                <h1 id = "header1"> Edit This Task </h1>
                 <form onSubmit = { this.handleSubmit } >
                     <div className = "form-group">
                         <label className = "form-label"> New Task Description: </label>

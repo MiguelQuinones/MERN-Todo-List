@@ -81,7 +81,7 @@ export default class deleteTask extends Component {
     render() {
         return (
             <div>
-                <h1> Delete This Task? </h1>
+                <h1 id = "header1"> Delete This Task? </h1>
                 <form onSubmit = { this.handleSubmit } >
                     <div className = "form-group">
                         <label className = "form-label"> Task Description: </label>
