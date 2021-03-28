@@ -37,6 +37,15 @@ class App extends Component {
     document.body.style.backgroundColor = theme;
     document.body.style.color = theme === THEMES.Dark ? THEMES.Light : THEMES.Dark;
     this.saveSettings( theme );
+    // Change theme of table to match
+    var tableSwitch = document.getElementById( "table" );
+    if( tableSwitch ) {
+      if( theme === THEMES.Dark ) {
+        tableSwitch.className = "table table-striped table-bordered table-hover table-dark"
+      } else if( theme === THEMES.Light ) {
+        tableSwitch.className = "table table-striped table-bordered table-hover"
+      }
+    }
   }
 
   render() {

@@ -8,6 +8,6 @@ This application's front end is currently being hosted on GitHub Pages: https://
 
 # TODO
 
-Add way to have table switch between light and dark themes
+Add way to have navbar switch between light and dark themes
 
 More...

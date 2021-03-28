@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Create object that will act as table of tasks -- add deletion functionality
+// Create object that will act as table of tasks
 const Task = props => (
     <tr>
         <td className = "taskDescription"> { props.task.task_description }</td>
@@ -30,8 +30,7 @@ export default class todoList extends Component {
         this.state = { tasks: [] }
     }
 
-    // componentDidMount method to execute fetch api request to get list of tasks from DB
-    // Figure out how to use fetch instead later
+    // componentDidMount method to execute request to get list of tasks from DB
     componentDidMount() {
         axios.get( "http://localhost:4000/tododb/" )
         .then( response => {
@@ -49,12 +48,12 @@ export default class todoList extends Component {
         })
     }
 
-    // Render function to display table of tasks to user -- if task is completed, add checkmark next to task in new header
+    // Render function to display table of tasks to user
     render() {
         return (
             <div>
                 <h1 id = "header1"> Task List </h1>
-                <table className = "table table-striped table-bordered table-hover table-dark">
+                <table id = "table" className = "table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                             <th> Description </th>
