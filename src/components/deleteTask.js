@@ -6,7 +6,7 @@ import React, { Component } from "react";
 
 export default class deleteTask extends Component {
     
-    // Constructor will go here
+    // Constructor to set default state
     constructor( props ) {
         super( props ); 
 
@@ -24,7 +24,7 @@ export default class deleteTask extends Component {
         }
     }
 
-    // Fetch task to be deleted from DB via its id
+    // Fetch task to be deleted from DB via its ID
     componentDidMount() {
         axios.get( "http://localhost:4000/tododb/" + this.props.match.params.id )
         .then( response => {
@@ -77,7 +77,7 @@ export default class deleteTask extends Component {
         this.props.history.push( '/' );
     }
 
-    // Render function that displays form to user -- remove submit input later for submit button component
+    // Render function that displays form to user
     render() {
         return (
             <div>

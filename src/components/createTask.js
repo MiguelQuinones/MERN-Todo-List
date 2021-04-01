@@ -5,7 +5,7 @@ import React, { Component } from "react";
 
 export default class createTask extends Component {
     
-    // Constructor will go here
+    // Constructor to set default state
     constructor( props ) {
         super( props ); 
 
@@ -22,18 +22,21 @@ export default class createTask extends Component {
         }
     }
 
+    // Function to update state of the description
     handleChangeDescription( e ) {
         this.setState ( {
             task_description : e.target.value
         } );
     }
 
+    // Function to set the state of the priority for the task
     handleChangePriority( e ) {
         this.setState ( {
             task_priority : e.target.value
         } );
     }
 
+    // Function to handle submission after a user has created their task
     handleSubmit( e ) {
         // Prevent page from refreshing after submission
         e.preventDefault();
@@ -45,7 +48,7 @@ export default class createTask extends Component {
             task_completed: this.state.task_completed
         };
 
-        // Send request to database comprised of stringified object -- change endpoint later -- alert user of success
+        // Send request to database comprised of stringified object
         fetch( 'http://localhost:4000/tododb/add', {
             method: 'POST',
             headers: {
@@ -68,7 +71,7 @@ export default class createTask extends Component {
         this.props.history.push( '/' );
     }
 
-    // Render function that displays form to user -- remove submit input later for submit button component
+    // Render function that displays form to user
     render() {
         return (
             <div>

@@ -37,7 +37,7 @@ class App extends Component {
     document.body.style.backgroundColor = theme;
     document.body.style.color = theme === THEMES.Dark ? THEMES.Light : THEMES.Dark;
     this.saveSettings( theme );
-    // Change theme of table to match
+    // Change theme of table to match -- if table exists on page, performs the changes
     var tableSwitch = document.getElementById( "table" );
     if( tableSwitch ) {
       if( theme === THEMES.Dark ) {
@@ -46,13 +46,20 @@ class App extends Component {
         tableSwitch.className = "table table-striped table-bordered table-hover"
       }
     }
+    // Change theme of navbar to match
+    var navbar = document.getElementById( "navbar" );
+    if( theme === THEMES.Dark ) {
+      navbar.className = "navbar navbar-expand-lg navbar-dark bg-dark"
+    } else if( theme === THEMES.Light ) {
+      navbar.className = "navbar navbar-expand-lg navbar-light bg-light"
+    }
   }
 
   render() {
     return (
       <Router>
         <div className = "container" >
-          <nav className = "navbar navbar-expand-lg navbar-light bg-light" >
+          <nav id = "navbar" className = "navbar navbar-expand-lg navbar-light bg-light" >
           <img src = { logo } alt = "Logo" />
             <Link to = "/" className = "navbar-brand"> </Link>
             <div className = "navbar-collapse">

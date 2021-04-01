@@ -8,6 +8,4 @@ This application's front end is currently being hosted on GitHub Pages: https://
 
 # TODO
 
-Add way to have navbar switch between light and dark themes
-
-More...
+Figure out how to host the application online

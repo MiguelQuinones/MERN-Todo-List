@@ -6,7 +6,7 @@ import React, { Component } from "react";
 
 export default class editTask extends Component {
     
-    // Constructor will go here
+    // Constructor to set default state
     constructor( props ) {
         super( props );
 
